@@ -44,13 +44,20 @@ journal_data_air <- journal_data_air %>%
   group_by(year) %>%                    # calculate the counts
   summarize(counts = n()) %>%
   arrange(-counts)
+#학회지별 논문 수 데이터 정제
+journal_data2<- journal_data%>%
+  group_by(journal) %>%                    # calculate the counts
+  summarize(counts = n()) %>%
+  arrange(-counts)
 
 #대기 학회지의 연도별 논문 수
 table(journal_data_air$year)
 table(journal_data_robot$year)
 library(patchwork)
-p<-ggplot(data = journal_data_air, aes(x = year,y=counts,group=1))+geom_line(color="red")
-p+ggplot(data = journal_data_clothes, aes(x = year,y=counts,group=2))+geom_line(color="blue")
+ggplot(data = journal_data, aes(x = year,y=counts,group=journal$ko,colour=journal$ko))+geom_line()
+p<-ggplot(data = journal_data_air, aes(x = year,y=counts,group=1))
+p+geom_line(color="red")+geom_line(data=journal_data_clothes, color="blue",group=1)
+
 #학회지별 논문 수 데이터 정제
 journal_data_2 <- journal_data %>%
   group_by(journal) %>%                    # calculate the counts
@@ -64,7 +71,7 @@ p<-ggplot(journal_data_2, aes(x =reorder(journal$ko,counts),y=counts))+geom_bar(
 #x,y축,제목달기
 p<-p+labs(x='학회지',y='논문수',title="학회지별 논문수")
 
-#강조하기
+#강조하기 journal_data$journal$ko, y = journal_data$year, prop.t=FALSE, expected=TRUE, chisq =TRUE)
 p<-p+ geom_bar(data=journal_data_2[journal_data_2$journal$ko=='한국광학회:학술대회논문집', ], aes(x=journal$ko, y=counts), fill='#5CBED2', stat='identity') 
 
 #레이블 달기
@@ -72,7 +79,6 @@ p+ geom_text(aes(label=counts), size=3, hjust=1.25, color='#FFFFFF')
 
 #연도와 학회지의 연관관계
 library(gmodels)
-CrossTable(x = journal_data$journal$ko, y = journal_data$year, prop.t=FALSE, expected=TRUE, chisq =TRUE)
 
 #
 CrossTable(x = journal_data$journal$ko, y = journal_data$year, prop.t=FALSE, expected=TRUE, chisq =TRUE)
