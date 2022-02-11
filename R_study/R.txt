@@ -1,0 +1,5 @@
+KoNLP설치방법
+- install.packages("remotes") 
+remotes::install_github('haven-jeon/KoNLP', upgrade = "never", INSTALL_opts=c("--no-multiarch"))
+library(KoNLP)
+[출처] DAY28. R konlp 설치 방법|작성자 J
