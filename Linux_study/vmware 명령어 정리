@@ -1,5 +1,6 @@
 1. 인터넷 연결이 안될때: sudo dhclient
 2. host pc에서 가상 pc로 복붙할 때: 
-apt-get install "open-vm-tools"
-apt-get install "open-vm-tools-desktop"
+apt-get install open-vm-tools
+apt-get install open-vm-tools-desktop
 둘다 설치해야함.
+
