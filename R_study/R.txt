@@ -1,0 +1,11 @@
+KoNLP설치방법
+- install.packages("remotes") 
+remotes::install_github('haven-jeon/KoNLP', upgrade = "never", INSTALL_opts=c("--no-multiarch"))
+library(KoNLP)
+[출처] DAY28. R konlp 설치 방법|작성자 J
+
+tar.gz파일 된 수동 설치 방법
+- install.packages ("C:\\ripa_2.0-2.tar.gz", repos=NULL, type="source")
+[출처] [R 문제해결] R에서 tar.gz 파일로 된 패키지 수동 설치하는 방법|작성자 ITISIK
+
+
