@@ -1,7 +1,7 @@
-install.packages("KoNLP")
-install.packages("remotes") 
-remotes::install_github('haven-jeon/KoNLP', upgrade = "never", INSTALL_opts=c("--no-multiarch"))
-install.packages("wordcloud")
+#install.packages("KoNLP")
+#install.packages("remotes") 
+#remotes::install_github('haven-jeon/KoNLP', upgrade = "never", INSTALL_opts=c("--no-multiarch"))
+#install.packages("wordcloud")
 
 setwd("C:/Users/ehdcj/Desktop/2022_kisti_intern/R_study/비정형데이터분석(영화후기)")
 library(wordcloud)
