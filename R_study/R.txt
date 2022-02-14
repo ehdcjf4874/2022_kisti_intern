@@ -8,4 +8,6 @@ tar.gz파일 된 수동 설치 방법
 - install.packages ("C:\\ripa_2.0-2.tar.gz", repos=NULL, type="source")
 [출처] [R 문제해결] R에서 tar.gz 파일로 된 패키지 수동 설치하는 방법|작성자 ITISIK
 
+install.packages 오류 해결방법
+options(repos = c(CRAN = "http://cran.rstudio.com"))
 
