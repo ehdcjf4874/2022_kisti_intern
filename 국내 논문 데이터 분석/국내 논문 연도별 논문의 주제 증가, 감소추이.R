@@ -26,9 +26,11 @@ df<-as.data.frame(df)
 #t<-as.data.frame.matrix(t) 
 
 #Freq가 0인 값 제거
-df<- df %>%
-  filter(Freq!="0")
+#df<- df %>%
+  #filter(Freq!="0")
 
 #그래프 그리기
 graph<-ggplot(df, aes(year,Freq,color=subject,group=1))+geom_line()
+graph + ggtitle("연도에 따른 논문 주제의 추이") +
+  xlab("연도") + ylab("논문 수 ")
 
