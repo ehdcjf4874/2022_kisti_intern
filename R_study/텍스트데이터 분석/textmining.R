@@ -1,0 +1,6 @@
+install.packages("remotes") 
+remotes::install_github('haven-jeon/KoNLP', upgrade = "never", INSTALL_opts=c("--no-multiarch"))
+library(KoNLP)
+useSejongDic()
+useNIADic()
+SimplePos22("æ»≥Á«œººø‰")
