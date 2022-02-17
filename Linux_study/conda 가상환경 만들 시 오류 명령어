@@ -1,0 +1,4 @@
+1. conda activate [가상환경이름] 실행시 오류날 떄:
+오류: CommandNotFoundError: Your shell has not been properly configured to use 'conda activate'.
+해결책: source ~/anaconda3/etc/profile.d/conda.sh
+
